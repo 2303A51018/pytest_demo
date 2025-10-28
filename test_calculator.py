@@ -1,3 +1,3 @@
-from calculator import subtract
-def test_subtract():
-  assert subtract(5,3)==2
+from calculator import add
+def test_add():
+  assert add(5,3)==2
