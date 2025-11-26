@@ -1,0 +1,45 @@
+  Restaurant
+---------
+id
+name
+cuisine
+rating
+address
+imageUrl
+
+User
+---------
+favorites[] (restaurant IDs)
+
+FavoritesManager
+---------
+addToFavorites()
+removeFromFavorites()
+getFavorites()
+User → UI: Enter search query  
+UI → API: Fetch query results  
+API → UI: Return JSON data  
+UI → Browser: Render cards  
+FoodFinder/
+│
+├── public/
+│     └── index.html
+│
+├── src/
+│     ├── components/
+│     │        ├── SearchBar.js
+│     │        ├── RestaurantCard.js
+│     │        └── Favorites.js
+│     ├── pages/
+│     │        ├── Home.js
+│     │        └── FavoritesPage.js
+│     ├── utils/
+│     │        └── localStorage.js
+│     ├── App.js
+│     └── index.js
+│
+├── package.json
+└── README.md
+localStorage.setItem("favorites", JSON.stringify(favoritesArray));
+const favorites = JSON.parse(localStorage.getItem("favorites")) || [];
+favorites = favorites.filter(x => x.id !== restaurant.id);
